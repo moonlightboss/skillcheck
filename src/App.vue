@@ -1,9 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <v-container class="bg-surface-variant">
+    <v-row no-gutters>
+      <v-col cols="12">
+        <v-sheet class="pa-2"> Хеддер портфолио </v-sheet>
+      </v-col>
+      <v-col cols="4">
+        <v-sheet class="pa-2"> Тут просто текст затычка</v-sheet>
+      </v-col>
+      <v-col cols="8">
+        <v-sheet class="pa-2">
+          Тут будут варианты всего
+          <nav>
+            <router-link to="/first">Info Page</router-link> |
+            <router-link to="/second">One with some task</router-link>
+          </nav>
+          <router-view />
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <style lang="scss">

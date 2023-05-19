@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import FirstPage from "@/views/FirstPage.vue";
+import SecondPage from "@/views/SecondPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
-    name: "home",
+    path: "/first",
+    name: "first",
     component: FirstPage,
+  },
+  {
+    path: "/second",
+    name: "second",
+    component: SecondPage,
   },
 ];
 
