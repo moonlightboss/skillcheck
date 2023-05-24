@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import SecondPage from "@/views/SecondPage.vue";
+import WeatherAppPageVue from "@/views/WeatherAppPage.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/first",
-    name: "first",
-    component: FirstPage,
+    path: "/weatherapp",
+    name: "weatherapp",
+    component: WeatherAppPageVue,
   },
   {
     path: "/second",
