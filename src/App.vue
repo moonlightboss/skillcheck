@@ -55,22 +55,28 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-footer class="bg-grey-lighten-1">
-      <v-row justify="center" no-gutters>
+    <v-footer class="d-flex flex-column">
+      <div class="d-flex w-100 align-center px-4">
+        <strong>My social</strong>
+
+        <v-spacer></v-spacer>
+
         <v-btn
           v-for="link in links"
           :key="link"
-          color="white"
+          color="black"
           variant="text"
           class="mx-2"
           rounded="xl"
         >
           {{ link }}
         </v-btn>
-        <v-col class="text-center mt-4" cols="12">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-col>
-      </v-row>
+      </div>
+
+      <div class="px-4 py-2 text-center w-100">
+        {{ new Date().getFullYear() }} —
+        <strong>Vue 3, Vuetify and Vladislav "moonlight" Golosnoy</strong>
+      </div>
     </v-footer>
   </v-app>
 </template>
