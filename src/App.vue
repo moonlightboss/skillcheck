@@ -45,7 +45,6 @@
                     :to="getRoutLink(rout)"
                     class="ma-2"
                   >
-                    <!-- <router-link to="/weatherapp">Weather App</router-link> -->
                     {{ rout }}
                   </v-btn>
                 </v-slide-group-item>
