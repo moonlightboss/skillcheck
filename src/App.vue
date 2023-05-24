@@ -39,13 +39,14 @@
             <nav>
               <v-slide-group show-arrows>
                 <v-slide-group-item>
-                  <v-btn class="ma-2" rounded>
-                    <router-link to="/weatherapp">Weather App</router-link>
-                  </v-btn>
-                </v-slide-group-item>
-                <v-slide-group-item>
-                  <v-btn class="ma-2" rounded>
-                    <router-link to="/second">Pomodoro timer</router-link>
+                  <v-btn
+                    v-for="rout in routs"
+                    :key="rout"
+                    :to="getRoutLink(rout)"
+                    class="ma-2"
+                  >
+                    <!-- <router-link to="/weatherapp">Weather App</router-link> -->
+                    {{ rout }}
                   </v-btn>
                 </v-slide-group-item>
               </v-slide-group>
@@ -86,6 +87,7 @@ export default {
   data: () => ({
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
     links: ["GitHub", "LinkedIn", "CodeWars"],
+    routs: ["Weather app", "Pomodoro timer"],
   }),
   methods: {
     getLinkUrl(link: string) {
@@ -98,6 +100,14 @@ export default {
           return "https://www.codewars.com/users/your-username";
         default:
           return "#";
+      }
+    },
+    getRoutLink(rout: string) {
+      switch (rout) {
+        case "Weather app":
+          return "/weatherapp";
+        case "Pomodoro timer":
+          return "/second";
       }
     },
   },
