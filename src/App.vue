@@ -1,45 +1,109 @@
 <template>
-  <v-container class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col cols="12">
-        <v-sheet class="pa-2"> Хеддер портфолио </v-sheet>
-      </v-col>
-      <v-col cols="4">
-        <v-sheet class="pa-2"> Тут просто текст затычка</v-sheet>
-      </v-col>
-      <v-col cols="8">
-        <v-sheet class="pa-2">
-          Тут будут варианты всего
-          <nav>
-            <router-link to="/first">Info Page</router-link> |
-            <router-link to="/second">One with some task</router-link>
-          </nav>
-          <router-view />
-        </v-sheet>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app id="#app">
+    <v-container>
+      <v-row no-gutters>
+        <v-col cols="2">
+          <v-sheet class="pa-2">
+            <v-img
+              class="align-end text-white mx-auto"
+              width="200"
+              height="200"
+              v-bind:src="require('../src/assets/photo.jpg')"
+              cover
+            >
+            </v-img>
+            <div>Frontend dev</div>
+            <div class="skills">
+              <div class="main-skills">
+                <h3 class="skill-title">Main</h3>
+                JavaScript TypeScript Vue 3
+              </div>
+              <div class="html-skills">
+                <h3 class="skill-title">HTML</h3>
+                HTML5
+              </div>
+              <div class="css-skills">
+                <h3 class="skill-title">CSS</h3>
+                CSS3 SCSS Tailwind Bootstrap Vuetify
+              </div>
+              <div class="other-skills">
+                <h3 class="skill-title">OTHER</h3>
+                figma php nodejs npm,yarn postman
+              </div>
+            </div>
+          </v-sheet>
+        </v-col>
+        <v-col cols="10">
+          <v-sheet class="pa-2 mx-auto">
+            <h2>Варианты решенных задач</h2>
+            <nav>
+              <v-slide-group show-arrows>
+                <v-slide-group-item>
+                  <v-btn class="ma-2" rounded>
+                    <router-link to="/weatherapp">Weather App</router-link>
+                  </v-btn>
+                </v-slide-group-item>
+                <v-slide-group-item>
+                  <v-btn class="ma-2" rounded>
+                    <router-link to="/second">Pomodoro timer</router-link>
+                  </v-btn>
+                </v-slide-group-item>
+              </v-slide-group>
+            </nav>
+            <router-view />
+          </v-sheet>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-footer class="bg-grey-lighten-1">
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          color="white"
+          variant="text"
+          class="mx-2"
+          rounded="xl"
+        >
+          {{ link }}
+        </v-btn>
+        <v-col class="text-center mt-4" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
+<script lang="ts">
+export default {
+  data: () => ({
+    icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"],
+  }),
+};
+</script>
 
-<style lang="scss">
-#app {
+<style>
+.v-application__wrap {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  min-height: 100vh;
   color: #2c3e50;
+  background-image: linear-gradient(180deg, #8294c4, #acb1d6, #dbdfea, #ffead2);
 }
 
 nav {
   padding: 30px;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+nav a.router-link-exact-active {
+  color: #7042b9;
 }
 </style>
