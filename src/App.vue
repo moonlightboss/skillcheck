@@ -106,7 +106,7 @@ export default {
         case "Weather app":
           return "/weatherapp";
         case "Pomodoro timer":
-          return "/second";
+          return "/pomodoro";
       }
     },
   },
@@ -123,7 +123,9 @@ export default {
   color: #2c3e50;
   background-image: linear-gradient(180deg, #8294c4, #acb1d6, #dbdfea, #ffead2);
 }
-
+.none {
+  background-color: #cacde63f;
+}
 nav {
   padding: 30px;
 }
