@@ -68,6 +68,7 @@
           variant="text"
           class="mx-2"
           rounded="xl"
+          :href="getLinkUrl(link)"
         >
           {{ link }}
         </v-btn>
@@ -84,8 +85,22 @@
 export default {
   data: () => ({
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-    links: ["GitHub", "LinkedIn", "Team", "CodeWars"],
+    links: ["GitHub", "LinkedIn", "CodeWars"],
   }),
+  methods: {
+    getLinkUrl(link: string) {
+      switch (link) {
+        case "GitHub":
+          return "https://github.com/your-username";
+        case "LinkedIn":
+          return "https://www.linkedin.com/in/your-profile";
+        case "CodeWars":
+          return "https://www.codewars.com/users/your-username";
+        default:
+          return "#";
+      }
+    },
+  },
 };
 </script>
 
