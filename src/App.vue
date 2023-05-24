@@ -78,7 +78,7 @@
 export default {
   data: () => ({
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
-    links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"],
+    links: ["GitHub", "LinkedIn", "Team", "CodeWars"],
   }),
 };
 </script>
