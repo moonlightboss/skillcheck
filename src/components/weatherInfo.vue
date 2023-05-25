@@ -38,7 +38,7 @@
 <script>
 import api_key from "./config.js";
 export default {
-  name: "app",
+  name: "WeatherInfo",
   data() {
     return {
       url_base: "https://api.openweathermap.org/data/2.5/",
@@ -126,7 +126,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;

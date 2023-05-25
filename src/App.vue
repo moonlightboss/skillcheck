@@ -82,7 +82,11 @@
   </v-app>
 </template>
 <script lang="ts">
+// import ProgressCircular from "@/components/ProgressСircular.vue";
 export default {
+  // components: {
+  //   ProgressCircular,
+  // },
   data: () => ({
     icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
     links: ["GitHub", "LinkedIn", "CodeWars"],
